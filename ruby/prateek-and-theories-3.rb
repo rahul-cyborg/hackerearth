@@ -9,23 +9,22 @@ test_cases.times do
     temp << gets.chomp.strip.split(' ').map(&:to_i)
   end
   input << n
-  input << temp
+  input << temp.sort
 end
 
 out = []
 
+
+
 (0...input.length).step(2) do |i|
   arr = input[i + 1]
   temp = []
-  t = (arr[0][0]..arr[0][1]).to_a
-  (1...arr.length).each do |p|
-    y = (arr[p][0]..arr[p][1]).to_a
-    d = t & y
-    t = y
-    temp = temp + d
-
+  arr.each do |ar|
+    temp = temp + (ar[0]..ar[1]).to_a
   end
-  out << temp.max_by{|x| temp.count(x) }
+  
+  val = temp.max_by { |i| temp.count(i) }
+  out << temp.count(val) 
 end
 
 puts out
