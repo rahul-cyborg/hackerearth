@@ -26,7 +26,7 @@ ruby app.rb
     Sample Response =>
     {"status":200,"template_id":"1466703153wjozo","message":"Template saved successfully"}
 
-*Note:* - User can direcoty pass erb template as content instead of reading from file
+*Note:* - User can directly pass erb template as content instead of reading from file
 
 2.  Generate ERB to PDF - Input : template id, json data, output file name via post
 
