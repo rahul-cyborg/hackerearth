@@ -1,6 +1,6 @@
 # PDF Generation Services in sinatra
 
-GeneratE PDFs from ERB files.
+Generate PDFs from ERB files.
 
 ### Install
 
@@ -10,7 +10,7 @@ GeneratE PDFs from ERB files.
 
 3. sudo gem install sbfaulkner-sinatra-prawn -s http://gems.github.com
 
-## Run App
+### Run App
 
 ruby app.rb
 
@@ -26,7 +26,7 @@ ruby app.rb
     Sample Response =>
     {"status":200,"template_id":"1466703153wjozo","message":"Template saved successfully"}
 
-**Note - User can direcoty pass erb template as content instead of reading from file
+*Note:* - User can direcoty pass erb template as content instead of reading from file
 
 2.  Generate ERB to PDF - Input : template id, json data, output file name via post
 
