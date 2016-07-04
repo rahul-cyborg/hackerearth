@@ -8,8 +8,6 @@ Generate PDFs from ERB files.
 
 2. bundle install
 
-3. sudo gem install sbfaulkner-sinatra-prawn -s http://gems.github.com
-
 ### Run App
 
 ruby app.rb
@@ -23,12 +21,44 @@ ruby app.rb
       :content => File.open('test.erb', 'rb').read ,
       :assets => [ File.new('img_lights.jpg'),File.new('test.css')])
 
-    Sample Response =>
-    {"status":200,"template_id":"1466703153wjozo","message":"Template saved successfully"}
+    *Note:* - User can directly pass erb template as content instead of reading from file
+      
+    Sample Response in Positive cases =>
 
-*Note:* - User can directly pass erb template as content instead of reading from file
+    {
+    "status":200,
+    "template_id":"1466703153wjozo",
+    "message":"Template saved successfully"
+    }
 
-2.  Generate ERB to PDF - Input : template id, json data, output file name via post
+    Sample Response in Negative cases -
+
+    (1) In case of content is missing 
+
+    {
+    "status":400,
+    "message":"Content is missing"
+    }
+
+    (2) In case of templates directory not found or permissions issues
+
+    {
+    "status":500,
+    "template_id":null,
+    "message":"Template not saved successfully"
+    }
+
+    (3) In case of public directory not found or permissions issues
+
+    {
+    "status":500,
+    "template_id":"1467624639irntq",
+    "message":"Assets not saved successfully"
+    }
+
+
+
+2. Generate ERB to PDF - Input : template id, json data, output file name via post
 
     Sample Request =>
     RestClient.post('http://localhost:4567/generate_pdf', 
@@ -36,8 +66,29 @@ ruby app.rb
       :file_name => "myfile",
       :data => {"name":"rahul","lname":"PATEL","email":"rahul@gmail.com","phone":"9889701122"}.to_json) 
 
-    Sample Response =>
-    {"pdf_url":"http://localhost:4567/pdfs?file_name=1466703910klked.pdf","status":200}
+    Sample Response in Positive cases =>
+
+    {
+    "pdf_url":"http://localhost:4567/pdfs?file_name=1466703910klked.pdf",
+    "status":200
+    }
+
+    Sample Response in Negative cases -
+
+    (1) PDFKIT is not working properly
+
+    {
+    "status":500,
+    "message":"Internal Error"
+    }
+    
+    (2) Variables are missing in data 
+
+    {
+    "status":500,
+    "message":"Internal Error (variables are missing in data)"
+    }
+
 
 ## Copyright
 
