@@ -14,7 +14,7 @@ ruby app.rb
 
 ### Services
 
-#### 1. Save ERB Template - Input : ERB template and assets(css files and images) via post :
+1. Save ERB Template - Input : ERB template and assets(css files and images) via post :
     
     Sample Request =>
     RestClient.post('http://localhost:4567/save_template', 
@@ -63,7 +63,7 @@ ruby app.rb
 
 
 
-#### 2. Generate ERB to PDF - Input : template id, json data, output file name via post
+2. Generate ERB to PDF - Input : template id, json data, output file name via post
 
     Sample Request =>
     RestClient.post('http://localhost:4567/generate_pdf', 
@@ -94,7 +94,7 @@ ruby app.rb
     "message":"Internal Error (variables are missing in data)"
     }
     ```
-
+    
 
 ## Copyright
 
