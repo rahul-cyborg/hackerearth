@@ -25,11 +25,14 @@ ruby app.rb
       
     Sample Response in Positive cases =>
 
+    ```json
     {
     "status":200,
     "template_id":"1466703153wjozo",
     "message":"Template saved successfully"
     }
+    ```
+
 
     Sample Response in Negative cases -
 
