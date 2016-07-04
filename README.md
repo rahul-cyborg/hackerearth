@@ -37,27 +37,29 @@ ruby app.rb
     Sample Response in Negative cases -
 
     (1) In case of content is missing 
-
+    ```json
     {
     "status":400,
     "message":"Content is missing"
     }
+    ```
 
     (2) In case of templates directory not found or permissions issues
-
+    ```json
     {
     "status":500,
     "template_id":null,
     "message":"Template not saved successfully"
     }
-
+    ```
     (3) In case of public directory not found or permissions issues
-
+    ```json
     {
     "status":500,
     "template_id":"1467624639irntq",
     "message":"Assets not saved successfully"
     }
+    ```
 
 
 
@@ -70,28 +72,29 @@ ruby app.rb
       :data => {"name":"rahul","lname":"PATEL","email":"rahul@gmail.com","phone":"9889701122"}.to_json) 
 
     Sample Response in Positive cases =>
-
+    ```json
     {
     "pdf_url":"http://localhost:4567/pdfs?file_name=1466703910klked.pdf",
     "status":200
     }
-
+    ```
     Sample Response in Negative cases -
 
     (1) PDFKIT is not working properly
-
+    ```json
     {
     "status":500,
     "message":"Internal Error"
     }
-    
+    ```
     (2) Variables are missing in data 
-
+    ```json
     {
     "status":500,
     "message":"Internal Error (variables are missing in data)"
     }
-
+    ```
+    
 
 ## Copyright
 
