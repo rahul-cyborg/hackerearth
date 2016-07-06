@@ -123,14 +123,14 @@ ruby app.rb
 
 ## Sample Services Urls in Rails
 
-1. Save template - 
-```ruby
-http://localhost:3000/pdf-service/save_template
-```
-1. Generate PDF - 
-```ruby
-http://localhost:3000/pdf-service/generate_pdf
-```
+1. To Save template - 
+    ```ruby
+    http://localhost:3000/pdf-service/save_template
+    ```
+2. To Generate PDF - 
+    ```ruby
+    http://localhost:3000/pdf-service/generate_pdf
+    ```
 
 
 ## Copyright
