@@ -97,7 +97,7 @@ ruby app.rb
 
 ## Mount it inside a rails app
 
-1. Clone this inside bin directory of rails app
+1. Clone this inside lib directory of rails app
 2. Add the following to your `config/routes.rb`:
 
     ```ruby
