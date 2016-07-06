@@ -94,7 +94,44 @@ ruby app.rb
     "message":"Internal Error (variables are missing in data)"
     }
     ```
-    
+
+## Mount it inside a rails app
+
+1. Clone this inside bin directory of rails app
+2. Add the following to your `config/routes.rb`:
+
+```ruby
+require 'pdf-generation-service/app'
+mount Sidekiq::App => '/pdf-service'
+```
+3. Add the following on top of `lib/pdf-generation-service/app.rb` file:
+
+```ruby
+MOUNT_URL = 'pdf-service'
+```
+4. Add the following to rails `Gemfile`:
+
+```ruby
+Dir.glob File.expand_path("../lib/pdf-generation-service/Gemfile", __FILE__) do |file|
+  puts "Loading #{file} ..." if $DEBUG # `ruby -d` or `bundle -v`
+  instance_eval File.read(file)
+end
+```
+5. bundle install
+
+*Note:* - Server must be multi-threaded
+
+## Sample Services Urls in Rails
+
+1. Save template - 
+```ruby
+http://localhost:3000/pdf-service/save_template
+```
+1. Generate PDF - 
+```ruby
+http://localhost:3000/pdf-service/generate_pdf
+```
+
 
 ## Copyright
 
