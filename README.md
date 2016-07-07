@@ -17,10 +17,12 @@ ruby app.rb
 1. Save ERB Template - Input : ERB template and assets(css files and images) via post :
     
     Sample Request =>
+    ```ruby
     RestClient.post('http://localhost:4567/save_template', 
       :content => File.open('test.erb', 'rb').read ,
       :assets => [ File.new('img_lights.jpg'),File.new('test.css')])
-
+    ```
+    
     *Notes:* - 
 
     1. If ERB template have only absolute URLs of assets(images,css) - No need to pass 'assets' paramataer.
@@ -71,10 +73,13 @@ ruby app.rb
 2. Generate PDF from ERB - Input : template id, json data, output file name via post
 
     Sample Request =>
+
+    ```ruby
     RestClient.post('http://localhost:4567/generate_pdf', 
       :template_id => 92121212121 ,
       :file_name => "myfile",
       :data => {"name":"rahul","lname":"PATEL","email":"rahul@gmail.com","phone":"9889701122"}.to_json) 
+    ```
 
     Sample Response in Positive cases =>
     ```json
