@@ -21,12 +21,12 @@ ruby app.rb
       :content => File.open('test.erb', 'rb').read ,
       :assets => [ File.new('img_lights.jpg'),File.new('test.css')])
 
-    *Note:* - 
+    *Notes:* - 
 
     1. If ERB template have only absolute URLs of assets(images,css) - No need to pass 'assets' paramataer.
     
     2. If ERB template have relative URLs of assets(images,css) - Need to pass 'assets' paramataer. Relative URLs of assets 
-    must be like (`cat.png`) or (`/cat.png`) format only. Not should be like (`images/cat.png`) or (`/images/cat.png`).
+    must be like (`cat.png`) or (`/cat.png`) format only. Relative URLs should not be like (`images/cat.png`) or (`/images/cat.png`).
    
     Sample Response in Positive cases =>
 
