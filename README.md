@@ -124,7 +124,7 @@ jruby app.rb
 ## Running this application on Tomcat
 
 1. Clone the directory
-2. cd pdf-generation-service
+2. 'cd pdf-generation-service'
 3. Install warble
 
     ```ruby
