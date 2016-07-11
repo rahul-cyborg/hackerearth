@@ -105,6 +105,23 @@ ruby app.rb
     }
     ```
 
+## run this Sinatra app using JRuby
+
+### Install JRuby
+(1) rvm install jruby
+(2) rvm use jruby
+
+### Install JRuby bundler
+jruby -S gem install bundler
+
+### Install gems 
+jruby -S bundle install
+
+### Run App
+jruby app.rb
+
+
+
 ## Mount it inside a rails app
 
 1. Clone this inside lib directory of rails app
