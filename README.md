@@ -105,11 +105,11 @@ ruby app.rb
     }
     ```
 
-## run this Sinatra app using JRuby
+## Run this Sinatra app using JRuby
 
 ### Install JRuby
-(1) rvm install jruby
-(2) rvm use jruby
+1. rvm install jruby
+2. rvm use jruby
 
 ### Install JRuby bundler
 jruby -S gem install bundler
@@ -121,6 +121,27 @@ jruby -S bundle install
 jruby app.rb
 
 
+## Running this application on Tomcat
+
+1. Clone the directory
+2. cd pdf-generation-service
+3. Install warble
+    ```ruby
+    jruby -S gem install warbler
+    ```
+4. Run warbler to create a war file
+    ```ruby
+    jruby -S warble
+    ```
+5. Copy the file pdf-service.war and paste this file inside webapps directory of tomcat
+
+6.  Add the following on top of `webapps/pdf-service/WEB-INF/app.rb` file:
+
+    ```ruby
+    MOUNT_URL = 'pdf-service'
+    ```
+7. Make 'pdf-service' directory writable for the web server
+8. Start Tomcat Server
 
 ## Mount it inside a rails app
 
