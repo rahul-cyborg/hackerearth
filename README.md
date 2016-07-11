@@ -144,7 +144,12 @@ jruby app.rb
     MOUNT_URL = 'pdf-service'
     ```
 7. Make 'pdf-service' directory writable for the web server
+
+    ```ruby
+    sudo chmod -R 755 pdf-service
+    ```
 8. Start Tomcat Server
+
 
 ## Mount it inside a rails app
 
