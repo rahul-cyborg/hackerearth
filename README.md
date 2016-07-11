@@ -126,10 +126,13 @@ jruby app.rb
 1. Clone the directory
 2. cd pdf-generation-service
 3. Install warble
+
     ```ruby
     jruby -S gem install warbler
     ```
+
 4. Run warbler to create a war file
+
     ```ruby
     jruby -S warble
     ```
