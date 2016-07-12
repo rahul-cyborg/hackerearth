@@ -104,6 +104,19 @@ ruby app.rb
     "message":"Internal Error (variables are missing in data)"
     }
     ```
+    
+### Generate PDFs from haml files instead of ERB files
+1. Comment the following code on app.rb at line no - 22
+
+    ```ruby
+    erb content, :locals => json_data
+    ```
+2. Uncomment the following code on app.rb at line no - 24
+
+    ```ruby
+    haml content, :locals => json_data
+    ```
+
 
 ## Run this Sinatra app using JRuby
 
